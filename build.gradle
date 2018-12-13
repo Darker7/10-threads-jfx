@@ -2,18 +2,18 @@ plugins {
 	id 'java'
 	id 'application'
 	id 'org.openjfx.javafxplugin' version '0.0.5'
-//	id "com.google.osdetector" version "1.4.0"
+	id "com.google.osdetector" version "1.4.0"
 }
 
 /*
-Required only if JavaFX graphics extension is required
+Required only if JavaFX graphics extension is required */
 def platformMap = [
         osx    : 'mac',
         windows: 'win',
         linux  : 'linux'
 ]
 
-ext.platform = platformMap[osdetector.os] */
+ext.platform = platformMap[osdetector.os]
 
 sourceCompatibility = JavaVersion.VERSION_11
 
@@ -28,7 +28,7 @@ dependencies {
 	implementation("org.apache.logging.log4j:log4j-api:${log4j2Version}")
 	implementation("org.apache.logging.log4j:log4j-core:${log4j2Version}")
 
-	//implementation "org.openjfx:javafx-graphics:11.0.1:$platform"
+	implementation "org.openjfx:javafx-graphics:11.0.1:$platform"
 
 	testCompile("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
 	testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")

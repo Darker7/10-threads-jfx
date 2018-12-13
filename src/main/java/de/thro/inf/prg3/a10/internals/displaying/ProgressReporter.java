@@ -106,5 +106,9 @@ public final class ProgressReporter {
 		if (waiterCount.get() == 0) {
 			Platform.runLater(() -> waitersBusy.set(1.0));
 		}
+
+		if (cookCount.get() == 0) {
+			Platform.runLater(() -> cooksBusy.set(1.0));
+		}
 	}
 }
